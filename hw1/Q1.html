@@ -55,6 +55,19 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight .il { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Integer.Long */
   </style>
 <style type="text/css">
+    /*This file contains any manual css for this page that needs to override the global styles.
+This is only required when different pages style the same element differently. This is just
+a hack to deal with our current css styles and no new styling should be added in this file.*/
+
+#ipython-main-app {
+    position: relative;
+}
+#jupyter-main-app {
+    position: relative;
+}
+
+  </style>
+<style type="text/css">
 /*-----------------------------------------------------------------------------
 | Copyright (c) Jupyter Development Team.
 | Distributed under the terms of the Modified BSD License.
@@ -2113,7 +2126,7 @@ body.lm-mod-override-cursor .jp-IFrame::before {
 
 .jp-arrayFieldWrapper .field-description {
   padding: 4px 0;
-  white-space: pre;
+  white-space: pre-wrap;
 }
 
 .jp-arrayFieldWrapper .array-item {
@@ -3486,7 +3499,7 @@ button.jp-Dialog-close-button {
   border-radius: var(--jp-border-radius);
   color: var(--jp-ui-font-color1);
   font-size: var(--jp-ui-font-size1);
-  white-space: pre;
+  white-space: pre-wrap;
   word-wrap: break-word;
 }
 
@@ -4166,7 +4179,7 @@ button.jp-Dialog-close-button {
   font-size: inherit;
   line-height: var(--jp-code-line-height);
   padding: 0;
-  white-space: pre;
+  white-space: pre-wrap;
 }
 
 .jp-RenderedHTMLCommon :not(pre) > code {
@@ -5416,7 +5429,7 @@ body.lm-mod-override-cursor .jp-OutputArea-output.jp-mod-isolated::before {
   overflow-y: auto;
   word-break: break-all;
   word-wrap: break-word;
-  white-space: pre;
+  white-space: pre-wrap;
 }
 
 /* tables */
@@ -7443,7 +7456,7 @@ a.anchor-link {
     border-radius: var(--jp-border-radius);
     color: var(--jp-ui-font-color1);
     font-size: var(--jp-ui-font-size1);
-    white-space: pre;
+    white-space: pre-wrap;
     word-wrap: break-word;
   }
 
@@ -7481,7 +7494,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-julia"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="n">Pkg</span>
@@ -7530,19 +7543,19 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-julia"><pre><span></span><span class="k">let</span><span class="w">  </span>
-<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
-<span class="w">    </span><span class="nd">@show</span><span class="w"> </span><span class="n">x</span><span class="w"> </span>
+<div class="highlight hl-julia"><pre><span></span><span class="k">let</span>
+<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">]</span>
+<span class="w">    </span><span class="nd">@show</span><span class="w"> </span><span class="n">x</span>
 <span class="w">    </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="c"># NEVER DO THIS, EDITING ONE WILL NOW EDIT BOTH </span>
-<span class="w">    </span>
+
 <span class="w">    </span><span class="n">y</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="c"># this will now modify both y and x </span>
 <span class="w">    </span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">300</span><span class="w"> </span><span class="c"># this will now modify both y and x </span>
-<span class="w">    </span>
-<span class="w">    </span><span class="nd">@show</span><span class="w"> </span><span class="n">y</span><span class="w"> </span>
-<span class="w">    </span><span class="nd">@show</span><span class="w"> </span><span class="n">x</span><span class="w"> </span>
+
+<span class="w">    </span><span class="nd">@show</span><span class="w"> </span><span class="n">y</span>
+<span class="w">    </span><span class="nd">@show</span><span class="w"> </span><span class="n">x</span>
 <span class="k">end</span>
 </pre></div>
 </div>
@@ -7563,7 +7576,7 @@ x = [300, 2, 100]
 </div>
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[2]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>3-element Vector{Int64}:
  300
@@ -7578,7 +7591,7 @@ x = [300, 2, 100]
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-julia"><pre><span></span><span class="c"># to avoid this, here are two alternatives </span>
@@ -7617,7 +7630,7 @@ y2 = [1, 2, 100]
 </div>
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[3]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>3-element Vector{Int64}:
    1
@@ -7643,7 +7656,7 @@ y2 = [1, 2, 100]
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-julia"><pre><span></span><span class="c">## optional arguments in functions </span>
@@ -7677,7 +7690,7 @@ y2 = [1, 2, 100]
 </div>
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[4]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>(1, 2, 4, -30)</pre>
 </div>
@@ -7719,7 +7732,7 @@ y2 = [1, 2, 100]
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-julia"><pre><span></span><span class="c"># these two functions are given, no TODO's here </span>
@@ -7729,21 +7742,27 @@ y2 = [1, 2, 100]
 <span class="w">    </span><span class="c"># returns the time derivative of the state, ẋ (dx/dt)</span>
 
 <span class="w">    </span><span class="c"># the state is the following:</span>
-<span class="w">    </span><span class="n">θ1</span><span class="p">,</span><span class="n">θ̇1</span><span class="p">,</span><span class="n">θ2</span><span class="p">,</span><span class="n">θ̇2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span>
+<span class="w">    </span><span class="n">θ1</span><span class="p">,</span><span class="w"> </span><span class="n">θ̇1</span><span class="p">,</span><span class="w"> </span><span class="n">θ2</span><span class="p">,</span><span class="w"> </span><span class="n">θ̇2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span>
 
 <span class="w">    </span><span class="c"># system parameters</span>
 <span class="w">    </span><span class="n">m1</span><span class="p">,</span><span class="w"> </span><span class="n">m2</span><span class="p">,</span><span class="w"> </span><span class="n">L1</span><span class="p">,</span><span class="w"> </span><span class="n">L2</span><span class="p">,</span><span class="w"> </span><span class="n">g</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">params</span><span class="o">.</span><span class="n">m1</span><span class="p">,</span><span class="w"> </span><span class="n">params</span><span class="o">.</span><span class="n">m2</span><span class="p">,</span><span class="w"> </span><span class="n">params</span><span class="o">.</span><span class="n">L1</span><span class="p">,</span><span class="w"> </span><span class="n">params</span><span class="o">.</span><span class="n">L2</span><span class="p">,</span><span class="w"> </span><span class="n">params</span><span class="o">.</span><span class="n">g</span>
 
 <span class="w">    </span><span class="c"># dynamics</span>
-<span class="w">    </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cos</span><span class="p">(</span><span class="n">θ1</span><span class="o">-</span><span class="n">θ2</span><span class="p">)</span>
-<span class="w">    </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sin</span><span class="p">(</span><span class="n">θ1</span><span class="o">-</span><span class="n">θ2</span><span class="p">)</span>
+<span class="w">    </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cos</span><span class="p">(</span><span class="n">θ1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">θ2</span><span class="p">)</span>
+<span class="w">    </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sin</span><span class="p">(</span><span class="n">θ1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">θ2</span><span class="p">)</span>
 
 <span class="w">    </span><span class="n">ẋ</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
-<span class="w">        </span><span class="n">θ̇1</span><span class="p">;</span>
-<span class="w">        </span><span class="p">(</span><span class="w"> </span><span class="n">m2</span><span class="o">*</span><span class="n">g</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">θ2</span><span class="p">)</span><span class="o">*</span><span class="n">c</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">m2</span><span class="o">*</span><span class="n">s</span><span class="o">*</span><span class="p">(</span><span class="n">L1</span><span class="o">*</span><span class="n">c</span><span class="o">*</span><span class="n">θ̇1</span><span class="o">^</span><span class="mi">2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">L2</span><span class="o">*</span><span class="n">θ̇2</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="n">m1</span><span class="o">+</span><span class="n">m2</span><span class="p">)</span><span class="o">*</span><span class="n">g</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">θ1</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">L1</span><span class="w"> </span><span class="o">*</span><span class="p">(</span><span class="n">m1</span><span class="o">+</span><span class="n">m2</span><span class="o">*</span><span class="n">s</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">);</span>
-<span class="w">        </span><span class="n">θ̇2</span><span class="p">;</span>
-<span class="w">        </span><span class="p">((</span><span class="n">m1</span><span class="o">+</span><span class="n">m2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">L1</span><span class="o">*</span><span class="n">θ̇1</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="n">s</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">g</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">θ2</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">g</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">θ1</span><span class="p">)</span><span class="o">*</span><span class="n">c</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">m2</span><span class="o">*</span><span class="n">L2</span><span class="o">*</span><span class="n">θ̇2</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="n">s</span><span class="o">*</span><span class="n">c</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="n">L2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">m1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">m2</span><span class="o">*</span><span class="n">s</span><span class="o">^</span><span class="mi">2</span><span class="p">));</span>
-<span class="w">        </span><span class="p">]</span>
+<span class="w">        </span><span class="n">θ̇1</span>
+<span class="w">        </span><span class="p">(</span>
+<span class="w">            </span><span class="n">m2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">g</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">sin</span><span class="p">(</span><span class="n">θ2</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">m2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">L1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">θ̇1</span><span class="o">^</span><span class="mi">2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">L2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">θ̇2</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">-</span>
+<span class="w">            </span><span class="p">(</span><span class="n">m1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">m2</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">g</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">sin</span><span class="p">(</span><span class="n">θ1</span><span class="p">)</span>
+<span class="w">        </span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="n">L1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">m1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">m2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">s</span><span class="o">^</span><span class="mi">2</span><span class="p">))</span>
+<span class="w">        </span><span class="n">θ̇2</span>
+<span class="w">        </span><span class="p">(</span>
+<span class="w">            </span><span class="p">(</span><span class="n">m1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">m2</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">L1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">θ̇1</span><span class="o">^</span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">g</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">sin</span><span class="p">(</span><span class="n">θ2</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">g</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">sin</span><span class="p">(</span><span class="n">θ1</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">c</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">            </span><span class="n">m2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">L2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">θ̇2</span><span class="o">^</span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">c</span>
+<span class="w">        </span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="n">L2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">m1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">m2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">s</span><span class="o">^</span><span class="mi">2</span><span class="p">))</span>
+<span class="w">    </span><span class="p">]</span>
 
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">ẋ</span>
 <span class="k">end</span>
@@ -7752,20 +7771,20 @@ y2 = [1, 2, 100]
 
 
 <span class="w">    </span><span class="c"># the state is the following:</span>
-<span class="w">    </span><span class="n">θ1</span><span class="p">,</span><span class="n">θ̇1</span><span class="p">,</span><span class="n">θ2</span><span class="p">,</span><span class="n">θ̇2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span>
+<span class="w">    </span><span class="n">θ1</span><span class="p">,</span><span class="w"> </span><span class="n">θ̇1</span><span class="p">,</span><span class="w"> </span><span class="n">θ2</span><span class="p">,</span><span class="w"> </span><span class="n">θ̇2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span>
 
 <span class="w">    </span><span class="c"># system parameters</span>
 <span class="w">    </span><span class="n">m1</span><span class="p">,</span><span class="w"> </span><span class="n">m2</span><span class="p">,</span><span class="w"> </span><span class="n">L1</span><span class="p">,</span><span class="w"> </span><span class="n">L2</span><span class="p">,</span><span class="w"> </span><span class="n">g</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">params</span><span class="o">.</span><span class="n">m1</span><span class="p">,</span><span class="w"> </span><span class="n">params</span><span class="o">.</span><span class="n">m2</span><span class="p">,</span><span class="w"> </span><span class="n">params</span><span class="o">.</span><span class="n">L1</span><span class="p">,</span><span class="w"> </span><span class="n">params</span><span class="o">.</span><span class="n">L2</span><span class="p">,</span><span class="w"> </span><span class="n">params</span><span class="o">.</span><span class="n">g</span>
 
 <span class="w">    </span><span class="c"># cartesian positions/velocities of the masses</span>
-<span class="w">    </span><span class="n">r1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="n">L1</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">θ1</span><span class="p">),</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="n">params</span><span class="o">.</span><span class="n">L1</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">θ1</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">2</span><span class="p">]</span>
-<span class="w">    </span><span class="n">r2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">r1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">[</span><span class="n">params</span><span class="o">.</span><span class="n">L2</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">θ2</span><span class="p">),</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="n">params</span><span class="o">.</span><span class="n">L2</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">θ2</span><span class="p">)]</span>
-<span class="w">    </span><span class="n">v1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="n">L1</span><span class="o">*</span><span class="n">θ̇1</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">θ1</span><span class="p">),</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">L1</span><span class="o">*</span><span class="n">θ̇1</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">θ1</span><span class="p">)]</span>
-<span class="w">    </span><span class="n">v2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">[</span><span class="n">L2</span><span class="o">*</span><span class="n">θ̇2</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">θ2</span><span class="p">),</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">L2</span><span class="o">*</span><span class="n">θ̇2</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">θ2</span><span class="p">)]</span>
+<span class="w">    </span><span class="n">r1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="n">L1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">sin</span><span class="p">(</span><span class="n">θ1</span><span class="p">),</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="n">params</span><span class="o">.</span><span class="n">L1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">cos</span><span class="p">(</span><span class="n">θ1</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">2</span><span class="p">]</span>
+<span class="w">    </span><span class="n">r2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">r1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">[</span><span class="n">params</span><span class="o">.</span><span class="n">L2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">sin</span><span class="p">(</span><span class="n">θ2</span><span class="p">),</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="n">params</span><span class="o">.</span><span class="n">L2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">cos</span><span class="p">(</span><span class="n">θ2</span><span class="p">)]</span>
+<span class="w">    </span><span class="n">v1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="n">L1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">θ̇1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">cos</span><span class="p">(</span><span class="n">θ1</span><span class="p">),</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">L1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">θ̇1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">sin</span><span class="p">(</span><span class="n">θ1</span><span class="p">)]</span>
+<span class="w">    </span><span class="n">v2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">[</span><span class="n">L2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">θ̇2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">cos</span><span class="p">(</span><span class="n">θ2</span><span class="p">),</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">L2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">θ̇2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">sin</span><span class="p">(</span><span class="n">θ2</span><span class="p">)]</span>
 
 <span class="w">    </span><span class="c"># energy calculation</span>
-<span class="w">    </span><span class="n">kinetic</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.5</span><span class="o">*</span><span class="p">(</span><span class="n">m1</span><span class="o">*</span><span class="n">v1</span><span class="o">'*</span><span class="n">v1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">m2</span><span class="o">*</span><span class="n">v2</span><span class="o">'*</span><span class="n">v2</span><span class="p">)</span>
-<span class="w">    </span><span class="n">potential</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">m1</span><span class="o">*</span><span class="n">g</span><span class="o">*</span><span class="n">r1</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">m2</span><span class="o">*</span><span class="n">g</span><span class="o">*</span><span class="n">r2</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+<span class="w">    </span><span class="n">kinetic</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">m1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">v1</span><span class="o">'</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">v1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">m2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">v2</span><span class="o">'</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">v2</span><span class="p">)</span>
+<span class="w">    </span><span class="n">potential</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">m1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">g</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">r1</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">m2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">g</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">r2</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">kinetic</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">potential</span>
 <span class="k">end</span>
 </pre></div>
@@ -7778,7 +7797,7 @@ y2 = [1, 2, 100]
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[5]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>double_pendulum_energy (generic function with 1 method)</pre>
 </div>
@@ -7802,7 +7821,7 @@ y2 = [1, 2, 100]
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-julia"><pre><span></span><span class="s">"""</span>
@@ -7811,10 +7830,15 @@ y2 = [1, 2, 100]
 <span class="s">Given `ẋ = dynamics(params, x)`, take in the current state `x` and integrate it forward `dt`</span>
 <span class="s">using Forward Euler method. </span>
 <span class="s">"""</span>
-<span class="k">function</span><span class="w"> </span><span class="n">forward_euler</span><span class="p">(</span><span class="n">params</span><span class="o">::</span><span class="kt">NamedTuple</span><span class="p">,</span><span class="w"> </span><span class="n">dynamics</span><span class="o">::</span><span class="kt">Function</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="o">::</span><span class="kt">Vector</span><span class="p">,</span><span class="w"> </span><span class="n">dt</span><span class="o">::</span><span class="kt">Real</span><span class="p">)</span><span class="o">::</span><span class="kt">Vector</span>
+<span class="k">function</span><span class="w"> </span><span class="n">forward_euler</span><span class="p">(</span>
+<span class="w">    </span><span class="n">params</span><span class="o">::</span><span class="kt">NamedTuple</span><span class="p">,</span>
+<span class="w">    </span><span class="n">dynamics</span><span class="o">::</span><span class="kt">Function</span><span class="p">,</span>
+<span class="w">    </span><span class="n">x</span><span class="o">::</span><span class="kt">Vector</span><span class="p">,</span>
+<span class="w">    </span><span class="n">dt</span><span class="o">::</span><span class="kt">Real</span><span class="p">,</span>
+<span class="p">)</span><span class="o">::</span><span class="kt">Vector</span>
 <span class="w">    </span><span class="c"># ẋ = dynamics(params, x)</span>
 <span class="w">    </span><span class="c"># TODO: implement forward euler </span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">dt</span><span class="o">*</span><span class="n">dynamics</span><span class="p">(</span><span class="n">params</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">dt</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">dynamics</span><span class="p">(</span><span class="n">params</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">)</span>
 <span class="k">end</span>
 </pre></div>
 </div>
@@ -7826,7 +7850,7 @@ y2 = [1, 2, 100]
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[6]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>forward_euler</pre>
 </div>
@@ -7838,7 +7862,7 @@ y2 = [1, 2, 100]
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-julia"><pre><span></span><span class="n">include</span><span class="p">(</span><span class="n">joinpath</span><span class="p">(</span><span class="nd">@__DIR__</span><span class="p">,</span><span class="w"> </span><span class="s">"animation.jl"</span><span class="p">))</span>
@@ -7846,26 +7870,20 @@ y2 = [1, 2, 100]
 <span class="k">let</span>
 
 <span class="w">    </span><span class="c"># parameters for the simulation</span>
-<span class="w">    </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span>
-<span class="w">        </span><span class="n">m1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span>
-<span class="w">        </span><span class="n">m2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span>
-<span class="w">        </span><span class="n">L1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span>
-<span class="w">        </span><span class="n">L2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span>
-<span class="w">        </span><span class="n">g</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">9.8</span>
-<span class="w">    </span><span class="p">)</span>
+<span class="w">    </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">m1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="n">m2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="n">L1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="n">L2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="n">g</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">9.8</span><span class="p">)</span>
 
 <span class="w">    </span><span class="c"># initial condition</span>
-<span class="w">    </span><span class="n">x0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="nb">pi</span><span class="o">/</span><span class="mf">1.6</span><span class="p">;</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="nb">pi</span><span class="o">/</span><span class="mf">1.8</span><span class="p">;</span><span class="w"> </span><span class="mi">0</span><span class="p">]</span>
+<span class="w">    </span><span class="n">x0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="nb">pi</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">1.6</span><span class="p">;</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="nb">pi</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">1.8</span><span class="p">;</span><span class="w"> </span><span class="mi">0</span><span class="p">]</span>
 
 <span class="w">    </span><span class="c"># time step size (s)</span>
 <span class="w">    </span><span class="n">dt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.01</span>
-<span class="w">    </span><span class="n">tf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">30.0</span><span class="w"> </span>
+<span class="w">    </span><span class="n">tf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">30.0</span>
 <span class="w">    </span><span class="n">t_vec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="o">:</span><span class="n">dt</span><span class="o">:</span><span class="n">tf</span>
 <span class="w">    </span><span class="n">N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">length</span><span class="p">(</span><span class="n">t_vec</span><span class="p">)</span>
-<span class="w">    </span>
+
 <span class="w">    </span><span class="c"># store the trajectory in a vector of vectors</span>
 <span class="w">    </span><span class="n">X</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="n">zeros</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="o">:</span><span class="n">N</span><span class="p">]</span>
-<span class="w">    </span><span class="n">X</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="o">*</span><span class="n">x0</span><span class="w"> </span>
+<span class="w">    </span><span class="n">X</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">x0</span>
 
 <span class="w">    </span><span class="c"># TODO: simulate the double pendulum with `forward_euler` </span>
 <span class="w">    </span><span class="c"># X[k] = `x_k`, so X[k+1] = forward_euler(params, double_pendulum_dynamics, X[k], dt)</span>
@@ -7874,17 +7892,24 @@ y2 = [1, 2, 100]
 <span class="w">    </span><span class="k">end</span>
 
 <span class="w">    </span><span class="c"># calculate energy </span>
-<span class="w">    </span><span class="n">E</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="n">double_pendulum_energy</span><span class="p">(</span><span class="n">params</span><span class="p">,</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">X</span><span class="p">]</span>
+<span class="w">    </span><span class="n">E</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="n">double_pendulum_energy</span><span class="p">(</span><span class="n">params</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">X</span><span class="p">]</span>
 
 <span class="w">    </span><span class="nd">@show</span><span class="w"> </span><span class="nd">@test</span><span class="w"> </span><span class="n">norm</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="k">end</span><span class="p">])</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">1e-10</span><span class="w">   </span><span class="c"># make sure all X's were updated</span>
-<span class="w">    </span><span class="nd">@show</span><span class="w"> </span><span class="nd">@test</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="p">(</span><span class="n">E</span><span class="p">[</span><span class="k">end</span><span class="p">]</span><span class="o">/</span><span class="n">E</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">3</span><span class="w">  </span><span class="c"># energy should be increasing</span>
+<span class="w">    </span><span class="nd">@show</span><span class="w"> </span><span class="nd">@test</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="p">(</span><span class="n">E</span><span class="p">[</span><span class="k">end</span><span class="p">]</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">E</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">3</span><span class="w">  </span><span class="c"># energy should be increasing</span>
 
 <span class="w">    </span><span class="c"># plot state history, energy history, and animate it</span>
-<span class="w">    </span><span class="n">display</span><span class="p">(</span><span class="n">plot</span><span class="p">(</span><span class="n">t_vec</span><span class="p">,</span><span class="w"> </span><span class="n">hcat</span><span class="p">(</span><span class="n">X</span><span class="o">...</span><span class="p">)</span><span class="o">'</span><span class="p">,</span><span class="n">xlabel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"time (s)"</span><span class="p">,</span><span class="w"> </span><span class="n">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">"θ₁"</span><span class="w"> </span><span class="s">"θ̇₁ dot"</span><span class="w"> </span><span class="s">"θ₂"</span><span class="w"> </span><span class="s">"θ̇₂ dot"</span><span class="p">]))</span>
+<span class="w">    </span><span class="n">display</span><span class="p">(</span>
+<span class="w">        </span><span class="n">plot</span><span class="p">(</span>
+<span class="w">            </span><span class="n">t_vec</span><span class="p">,</span>
+<span class="w">            </span><span class="n">hcat</span><span class="p">(</span><span class="n">X</span><span class="o">...</span><span class="p">)</span><span class="o">'</span><span class="p">,</span>
+<span class="w">            </span><span class="n">xlabel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"time (s)"</span><span class="p">,</span>
+<span class="w">            </span><span class="n">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">"θ₁"</span><span class="w"> </span><span class="s">"θ̇₁ dot"</span><span class="w"> </span><span class="s">"θ₂"</span><span class="w"> </span><span class="s">"θ̇₂ dot"</span><span class="p">],</span>
+<span class="w">        </span><span class="p">),</span>
+<span class="w">    </span><span class="p">)</span>
 <span class="w">    </span><span class="n">display</span><span class="p">(</span><span class="n">plot</span><span class="p">(</span><span class="n">t_vec</span><span class="p">,</span><span class="w"> </span><span class="n">E</span><span class="p">,</span><span class="w"> </span><span class="n">xlabel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"time (s)"</span><span class="p">,</span><span class="w"> </span><span class="n">ylabel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"energy (J)"</span><span class="p">))</span>
-<span class="w">    </span><span class="n">meshcat_animate</span><span class="p">(</span><span class="n">params</span><span class="p">,</span><span class="n">X</span><span class="p">,</span><span class="n">dt</span><span class="p">,</span><span class="n">N</span><span class="p">)</span>
-<span class="w">    </span>
-<span class="w">    </span>
+<span class="w">    </span><span class="n">meshcat_animate</span><span class="p">(</span><span class="n">params</span><span class="p">,</span><span class="w"> </span><span class="n">X</span><span class="p">,</span><span class="w"> </span><span class="n">dt</span><span class="p">,</span><span class="w"> </span><span class="n">N</span><span class="p">)</span>
+
+
 <span class="k">end</span>
 </pre></div>
 </div>
@@ -8015,7 +8040,7 @@ y2 = [1, 2, 100]
 </div>
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[8]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div style="height: 500px; width: 100%; overflow-x: auto; overflow-y: hidden; resize: both">
 <iframe src="http://127.0.0.1:8700" style="width: 100%; height: 100%; border: none"></iframe>
@@ -8049,7 +8074,7 @@ x_{k+1} &amp;= x_k + (1/6)\cdot (k_1 + 2k_2 + 2k_3 + k_4)\end{align} $$</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-julia"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="n">midpoint</span><span class="p">(</span><span class="n">params</span><span class="o">::</span><span class="kt">NamedTuple</span><span class="p">,</span><span class="w"> </span><span class="n">dynamics</span><span class="o">::</span><span class="kt">Function</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="o">::</span><span class="kt">Vector</span><span class="p">,</span><span class="w"> </span><span class="n">dt</span><span class="o">::</span><span class="kt">Real</span><span class="p">)</span><span class="o">::</span><span class="kt">Vector</span>
@@ -8075,7 +8100,7 @@ x_{k+1} &amp;= x_k + (1/6)\cdot (k_1 + 2k_2 + 2k_3 + k_4)\end{align} $$</p>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[9]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>rk4 (generic function with 1 method)</pre>
 </div>
@@ -8087,7 +8112,7 @@ x_{k+1} &amp;= x_k + (1/6)\cdot (k_1 + 2k_2 + 2k_3 + k_4)\end{align} $$</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-julia"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="n">simulate_explicit</span><span class="p">(</span><span class="n">params</span><span class="o">::</span><span class="kt">NamedTuple</span><span class="p">,</span><span class="n">dynamics</span><span class="o">::</span><span class="kt">Function</span><span class="p">,</span><span class="n">integrator</span><span class="o">::</span><span class="kt">Function</span><span class="p">,</span><span class="n">x0</span><span class="o">::</span><span class="kt">Vector</span><span class="p">,</span><span class="n">dt</span><span class="o">::</span><span class="kt">Real</span><span class="p">,</span><span class="n">tf</span><span class="o">::</span><span class="kt">Real</span><span class="p">)</span>
@@ -8120,7 +8145,7 @@ x_{k+1} &amp;= x_k + (1/6)\cdot (k_1 + 2k_2 + 2k_3 + k_4)\end{align} $$</p>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[10]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>simulate_explicit (generic function with 1 method)</pre>
 </div>
@@ -8132,7 +8157,7 @@ x_{k+1} &amp;= x_k + (1/6)\cdot (k_1 + 2k_2 + 2k_3 + k_4)\end{align} $$</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-julia"><pre><span></span><span class="c"># initial condition</span>
@@ -8155,7 +8180,7 @@ x_{k+1} &amp;= x_k + (1/6)\cdot (k_1 + 2k_2 + 2k_3 + k_4)\end{align} $$</p>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[11]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>(m1 = 1.0, m2 = 1.0, L1 = 1.0, L2 = 1.0, g = 9.8)</pre>
 </div>
@@ -8197,20 +8222,47 @@ $$ \begin{align} x_{k+1/2} &amp;= \frac{1}{2}(x_k + x_{k+1}) + \frac{\Delta t}{8
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-julia"><pre><span></span><span class="c"># since these are explicit integrators, these function will return the residuals described above</span>
 <span class="c"># NOTE: we are NOT solving anything here, simply return the residuals </span>
-<span class="k">function</span><span class="w"> </span><span class="n">backward_euler</span><span class="p">(</span><span class="n">params</span><span class="o">::</span><span class="kt">NamedTuple</span><span class="p">,</span><span class="w"> </span><span class="n">dynamics</span><span class="o">::</span><span class="kt">Function</span><span class="p">,</span><span class="w"> </span><span class="n">x1</span><span class="o">::</span><span class="kt">Vector</span><span class="p">,</span><span class="w"> </span><span class="n">x2</span><span class="o">::</span><span class="kt">Vector</span><span class="p">,</span><span class="w"> </span><span class="n">dt</span><span class="o">::</span><span class="kt">Real</span><span class="p">)</span><span class="o">::</span><span class="kt">Vector</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">x1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">dt</span><span class="o">*</span><span class="n">dynamics</span><span class="p">(</span><span class="n">params</span><span class="p">,</span><span class="n">x2</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">x2</span>
+<span class="k">function</span><span class="w"> </span><span class="n">backward_euler</span><span class="p">(</span>
+<span class="w">    </span><span class="n">params</span><span class="o">::</span><span class="kt">NamedTuple</span><span class="p">,</span>
+<span class="w">    </span><span class="n">dynamics</span><span class="o">::</span><span class="kt">Function</span><span class="p">,</span>
+<span class="w">    </span><span class="n">x1</span><span class="o">::</span><span class="kt">Vector</span><span class="p">,</span>
+<span class="w">    </span><span class="n">x2</span><span class="o">::</span><span class="kt">Vector</span><span class="p">,</span>
+<span class="w">    </span><span class="n">dt</span><span class="o">::</span><span class="kt">Real</span><span class="p">,</span>
+<span class="p">)</span><span class="o">::</span><span class="kt">Vector</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">x1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">dt</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">dynamics</span><span class="p">(</span><span class="n">params</span><span class="p">,</span><span class="w"> </span><span class="n">x2</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">x2</span>
 <span class="k">end</span>
-<span class="k">function</span><span class="w"> </span><span class="n">implicit_midpoint</span><span class="p">(</span><span class="n">params</span><span class="o">::</span><span class="kt">NamedTuple</span><span class="p">,</span><span class="w"> </span><span class="n">dynamics</span><span class="o">::</span><span class="kt">Function</span><span class="p">,</span><span class="w"> </span><span class="n">x1</span><span class="o">::</span><span class="kt">Vector</span><span class="p">,</span><span class="w"> </span><span class="n">x2</span><span class="o">::</span><span class="kt">Vector</span><span class="p">,</span><span class="w"> </span><span class="n">dt</span><span class="o">::</span><span class="kt">Real</span><span class="p">)</span><span class="o">::</span><span class="kt">Vector</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">x1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">dt</span><span class="o">*</span><span class="n">dynamics</span><span class="p">(</span><span class="n">params</span><span class="p">,</span><span class="mf">0.5</span><span class="o">*</span><span class="p">(</span><span class="n">x1</span><span class="o">+</span><span class="n">x2</span><span class="p">))</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">x2</span>
+<span class="k">function</span><span class="w"> </span><span class="n">implicit_midpoint</span><span class="p">(</span>
+<span class="w">    </span><span class="n">params</span><span class="o">::</span><span class="kt">NamedTuple</span><span class="p">,</span>
+<span class="w">    </span><span class="n">dynamics</span><span class="o">::</span><span class="kt">Function</span><span class="p">,</span>
+<span class="w">    </span><span class="n">x1</span><span class="o">::</span><span class="kt">Vector</span><span class="p">,</span>
+<span class="w">    </span><span class="n">x2</span><span class="o">::</span><span class="kt">Vector</span><span class="p">,</span>
+<span class="w">    </span><span class="n">dt</span><span class="o">::</span><span class="kt">Real</span><span class="p">,</span>
+<span class="p">)</span><span class="o">::</span><span class="kt">Vector</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">x1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">dt</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">dynamics</span><span class="p">(</span><span class="n">params</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">x1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">x2</span><span class="p">))</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">x2</span>
 <span class="k">end</span>
-<span class="k">function</span><span class="w"> </span><span class="n">hermite_simpson</span><span class="p">(</span><span class="n">params</span><span class="o">::</span><span class="kt">NamedTuple</span><span class="p">,</span><span class="w"> </span><span class="n">dynamics</span><span class="o">::</span><span class="kt">Function</span><span class="p">,</span><span class="w"> </span><span class="n">x1</span><span class="o">::</span><span class="kt">Vector</span><span class="p">,</span><span class="w"> </span><span class="n">x2</span><span class="o">::</span><span class="kt">Vector</span><span class="p">,</span><span class="w"> </span><span class="n">dt</span><span class="o">::</span><span class="kt">Real</span><span class="p">)</span><span class="o">::</span><span class="kt">Vector</span>
-<span class="w">    </span><span class="n">x_mid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.5</span><span class="o">*</span><span class="p">(</span><span class="n">x1</span><span class="o">+</span><span class="n">x2</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">0.125</span><span class="o">*</span><span class="n">dt</span><span class="o">*</span><span class="p">(</span><span class="n">dynamics</span><span class="p">(</span><span class="n">params</span><span class="p">,</span><span class="n">x1</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">dynamics</span><span class="p">(</span><span class="n">params</span><span class="p">,</span><span class="n">x2</span><span class="p">))</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">x1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="o">/</span><span class="mi">6</span><span class="o">*</span><span class="n">dt</span><span class="o">*</span><span class="p">(</span><span class="n">dynamics</span><span class="p">(</span><span class="n">params</span><span class="p">,</span><span class="n">x1</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">4</span><span class="o">*</span><span class="n">dynamics</span><span class="p">(</span><span class="n">params</span><span class="p">,</span><span class="n">x_mid</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">dynamics</span><span class="p">(</span><span class="n">params</span><span class="p">,</span><span class="n">x2</span><span class="p">))</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">x2</span>
+<span class="k">function</span><span class="w"> </span><span class="n">hermite_simpson</span><span class="p">(</span>
+<span class="w">    </span><span class="n">params</span><span class="o">::</span><span class="kt">NamedTuple</span><span class="p">,</span>
+<span class="w">    </span><span class="n">dynamics</span><span class="o">::</span><span class="kt">Function</span><span class="p">,</span>
+<span class="w">    </span><span class="n">x1</span><span class="o">::</span><span class="kt">Vector</span><span class="p">,</span>
+<span class="w">    </span><span class="n">x2</span><span class="o">::</span><span class="kt">Vector</span><span class="p">,</span>
+<span class="w">    </span><span class="n">dt</span><span class="o">::</span><span class="kt">Real</span><span class="p">,</span>
+<span class="p">)</span><span class="o">::</span><span class="kt">Vector</span>
+<span class="w">    </span><span class="n">x_mid</span><span class="w"> </span><span class="o">=</span>
+<span class="w">        </span><span class="mf">0.5</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">x1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">x2</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">        </span><span class="mf">0.125</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">dt</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">dynamics</span><span class="p">(</span><span class="n">params</span><span class="p">,</span><span class="w"> </span><span class="n">x1</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">dynamics</span><span class="p">(</span><span class="n">params</span><span class="p">,</span><span class="w"> </span><span class="n">x2</span><span class="p">))</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">x1</span><span class="w"> </span><span class="o">+</span>
+<span class="w">           </span><span class="mi">1</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">6</span><span class="w"> </span><span class="o">*</span>
+<span class="w">           </span><span class="n">dt</span><span class="w"> </span><span class="o">*</span>
+<span class="w">           </span><span class="p">(</span>
+<span class="w">               </span><span class="n">dynamics</span><span class="p">(</span><span class="n">params</span><span class="p">,</span><span class="w"> </span><span class="n">x1</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">               </span><span class="mi">4</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">dynamics</span><span class="p">(</span><span class="n">params</span><span class="p">,</span><span class="w"> </span><span class="n">x_mid</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">               </span><span class="n">dynamics</span><span class="p">(</span><span class="n">params</span><span class="p">,</span><span class="w"> </span><span class="n">x2</span><span class="p">)</span>
+<span class="w">           </span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">x2</span>
 <span class="k">end</span>
 </pre></div>
 </div>
@@ -8222,7 +8274,7 @@ $$ \begin{align} x_{k+1/2} &amp;= \frac{1}{2}(x_k + x_{k+1}) + \frac{\Delta t}{8
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[14]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>hermite_simpson (generic function with 1 method)</pre>
 </div>
@@ -8234,30 +8286,41 @@ $$ \begin{align} x_{k+1/2} &amp;= \frac{1}{2}(x_k + x_{k+1}) + \frac{\Delta t}{8
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-julia"><pre><span></span><span class="c"># TODO</span>
 <span class="c"># this function takes in a dynamics function, implicit integrator function, and x1 </span>
 <span class="c"># and uses Newton's method to solve for an x2 that satsifies the implicit integration equations</span>
 <span class="c"># that we wrote about in the functions above</span>
-<span class="k">function</span><span class="w"> </span><span class="n">implicit_integrator_solve</span><span class="p">(</span><span class="n">params</span><span class="o">::</span><span class="kt">NamedTuple</span><span class="p">,</span><span class="w"> </span><span class="n">dynamics</span><span class="o">::</span><span class="kt">Function</span><span class="p">,</span><span class="w"> </span><span class="n">implicit_integrator</span><span class="o">::</span><span class="kt">Function</span><span class="p">,</span><span class="w"> </span><span class="n">x1</span><span class="o">::</span><span class="kt">Vector</span><span class="p">,</span><span class="w"> </span><span class="n">dt</span><span class="o">::</span><span class="kt">Real</span><span class="p">;</span><span class="n">tol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1e-13</span><span class="p">,</span><span class="w"> </span><span class="n">max_iters</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span><span class="o">::</span><span class="kt">Vector</span>
+<span class="k">function</span><span class="w"> </span><span class="n">implicit_integrator_solve</span><span class="p">(</span>
+<span class="w">    </span><span class="n">params</span><span class="o">::</span><span class="kt">NamedTuple</span><span class="p">,</span>
+<span class="w">    </span><span class="n">dynamics</span><span class="o">::</span><span class="kt">Function</span><span class="p">,</span>
+<span class="w">    </span><span class="n">implicit_integrator</span><span class="o">::</span><span class="kt">Function</span><span class="p">,</span>
+<span class="w">    </span><span class="n">x1</span><span class="o">::</span><span class="kt">Vector</span><span class="p">,</span>
+<span class="w">    </span><span class="n">dt</span><span class="o">::</span><span class="kt">Real</span><span class="p">;</span>
+<span class="w">    </span><span class="n">tol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1e-13</span><span class="p">,</span>
+<span class="w">    </span><span class="n">max_iters</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span>
+<span class="p">)</span><span class="o">::</span><span class="kt">Vector</span>
 
 <span class="w">    </span><span class="c"># initialize guess</span>
-<span class="w">    </span><span class="n">x2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="o">*</span><span class="n">x1</span>
+<span class="w">    </span><span class="n">x2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">x1</span>
 
 <span class="w">    </span><span class="c"># TODO: use Newton's method to solve for x2 such that residual for the integrator is 0</span>
 <span class="w">    </span><span class="c"># DO NOT USE A WHILE LOOP </span>
 <span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="o">:</span><span class="n">max_iters</span>
-<span class="w">        </span><span class="n">J</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FD</span><span class="o">.</span><span class="n">jacobian</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">implicit_integrator</span><span class="p">(</span><span class="n">params</span><span class="p">,</span><span class="w"> </span><span class="n">dynamics</span><span class="p">,</span><span class="w"> </span><span class="n">x1</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">dt</span><span class="p">),</span><span class="w"> </span><span class="n">x2</span><span class="p">)</span>
-<span class="w">        </span><span class="n">x2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x2</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">inv</span><span class="p">(</span><span class="n">J</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">implicit_integrator</span><span class="p">(</span><span class="n">params</span><span class="p">,</span><span class="w"> </span><span class="n">dynamics</span><span class="p">,</span><span class="w"> </span><span class="n">x1</span><span class="p">,</span><span class="w"> </span><span class="n">x2</span><span class="p">,</span><span class="w"> </span><span class="n">dt</span><span class="p">))</span>
-<span class="w">        </span>
+<span class="w">        </span><span class="n">J</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FD</span><span class="o">.</span><span class="n">jacobian</span><span class="p">(</span>
+<span class="w">            </span><span class="n">x</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">implicit_integrator</span><span class="p">(</span><span class="n">params</span><span class="p">,</span><span class="w"> </span><span class="n">dynamics</span><span class="p">,</span><span class="w"> </span><span class="n">x1</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">dt</span><span class="p">),</span>
+<span class="w">            </span><span class="n">x2</span><span class="p">,</span>
+<span class="w">        </span><span class="p">)</span>
+<span class="w">        </span><span class="n">x2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x2</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">inv</span><span class="p">(</span><span class="n">J</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">implicit_integrator</span><span class="p">(</span><span class="n">params</span><span class="p">,</span><span class="w"> </span><span class="n">dynamics</span><span class="p">,</span><span class="w"> </span><span class="n">x1</span><span class="p">,</span><span class="w"> </span><span class="n">x2</span><span class="p">,</span><span class="w"> </span><span class="n">dt</span><span class="p">))</span>
+
 <span class="w">        </span><span class="c"># TODO: return x2 when the norm of the residual is below tol </span>
 <span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="n">norm</span><span class="p">(</span><span class="n">implicit_integrator</span><span class="p">(</span><span class="n">params</span><span class="p">,</span><span class="w"> </span><span class="n">dynamics</span><span class="p">,</span><span class="w"> </span><span class="n">x1</span><span class="p">,</span><span class="w"> </span><span class="n">x2</span><span class="p">,</span><span class="w"> </span><span class="n">dt</span><span class="p">))</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">tol</span>
 <span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">x2</span>
 <span class="w">        </span><span class="k">end</span>
 
-<span class="w">        </span>
+
 <span class="w">    </span><span class="k">end</span>
 <span class="w">    </span><span class="n">error</span><span class="p">(</span><span class="s">"implicit integrator solve failed"</span><span class="p">)</span>
 <span class="k">end</span>
@@ -8271,7 +8334,7 @@ $$ \begin{align} x_{k+1/2} &amp;= \frac{1}{2}(x_k + x_{k+1}) + \frac{\Delta t}{8
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[18]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>implicit_integrator_solve (generic function with 1 method)</pre>
 </div>
@@ -8283,20 +8346,27 @@ $$ \begin{align} x_{k+1/2} &amp;= \frac{1}{2}(x_k + x_{k+1}) + \frac{\Delta t}{8
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [19]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-julia"><pre><span></span><span class="nd">@testset</span><span class="w"> </span><span class="s">"implicit integrator check"</span><span class="w"> </span><span class="k">begin</span><span class="w"> </span>
-<span class="w">    </span>
+<div class="highlight hl-julia"><pre><span></span><span class="nd">@testset</span><span class="w"> </span><span class="s">"implicit integrator check"</span><span class="w"> </span><span class="k">begin</span>
+
 <span class="w">    </span><span class="n">dt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1e-1</span>
-<span class="w">    </span><span class="n">x1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">.1</span><span class="p">,</span><span class="mf">.2</span><span class="p">,</span><span class="mf">.3</span><span class="p">,</span><span class="mf">.4</span><span class="p">]</span>
-<span class="w">    </span>
+<span class="w">    </span><span class="n">x1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">0.1</span><span class="p">,</span><span class="w"> </span><span class="mf">0.2</span><span class="p">,</span><span class="w"> </span><span class="mf">0.3</span><span class="p">,</span><span class="w"> </span><span class="mf">0.4</span><span class="p">]</span>
+
 <span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="n">integrator</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="p">[</span><span class="n">backward_euler</span><span class="p">,</span><span class="w"> </span><span class="n">implicit_midpoint</span><span class="p">,</span><span class="w"> </span><span class="n">hermite_simpson</span><span class="p">]</span>
 <span class="w">        </span><span class="n">println</span><span class="p">(</span><span class="s">"-----testing </span><span class="si">$integrator</span><span class="s"> ------"</span><span class="p">)</span>
-<span class="w">        </span><span class="n">x2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">implicit_integrator_solve</span><span class="p">(</span><span class="n">params</span><span class="p">,</span><span class="w"> </span><span class="n">double_pendulum_dynamics</span><span class="p">,</span><span class="w"> </span><span class="n">integrator</span><span class="p">,</span><span class="w"> </span><span class="n">x1</span><span class="p">,</span><span class="w"> </span><span class="n">dt</span><span class="p">)</span>
-<span class="w">        </span><span class="nd">@test</span><span class="w"> </span><span class="n">norm</span><span class="p">(</span><span class="n">integrator</span><span class="p">(</span><span class="n">params</span><span class="p">,</span><span class="w"> </span><span class="n">double_pendulum_dynamics</span><span class="p">,</span><span class="w"> </span><span class="n">x1</span><span class="p">,</span><span class="w"> </span><span class="n">x2</span><span class="p">,</span><span class="w"> </span><span class="n">dt</span><span class="p">))</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">1e-10</span>
+<span class="w">        </span><span class="n">x2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">implicit_integrator_solve</span><span class="p">(</span>
+<span class="w">            </span><span class="n">params</span><span class="p">,</span>
+<span class="w">            </span><span class="n">double_pendulum_dynamics</span><span class="p">,</span>
+<span class="w">            </span><span class="n">integrator</span><span class="p">,</span>
+<span class="w">            </span><span class="n">x1</span><span class="p">,</span>
+<span class="w">            </span><span class="n">dt</span><span class="p">,</span>
+<span class="w">        </span><span class="p">)</span>
+<span class="w">        </span><span class="nd">@test</span><span class="w"> </span><span class="n">norm</span><span class="p">(</span><span class="n">integrator</span><span class="p">(</span><span class="n">params</span><span class="p">,</span><span class="w"> </span><span class="n">double_pendulum_dynamics</span><span class="p">,</span><span class="w"> </span><span class="n">x1</span><span class="p">,</span><span class="w"> </span><span class="n">x2</span><span class="p">,</span><span class="w"> </span><span class="n">dt</span><span class="p">))</span><span class="w"> </span><span class="o">&lt;</span>
+<span class="w">              </span><span class="mf">1e-10</span>
 <span class="w">    </span><span class="k">end</span>
-<span class="w">    </span>
+
 <span class="k">end</span>
 </pre></div>
 </div>
@@ -8319,7 +8389,7 @@ implicit integrator check | <span class="ansi-green-fg">   3  </span><span class
 </div>
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[19]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>Test.DefaultTestSet("implicit integrator check", Any[], 3, false, false, true, 1.706280499859626e9, 1.706280501501644e9, false)</pre>
 </div>
@@ -8331,24 +8401,38 @@ implicit integrator check | <span class="ansi-green-fg">   3  </span><span class
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [20]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-julia"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="n">simulate_implicit</span><span class="p">(</span><span class="n">params</span><span class="o">::</span><span class="kt">NamedTuple</span><span class="p">,</span><span class="n">dynamics</span><span class="o">::</span><span class="kt">Function</span><span class="p">,</span><span class="n">implicit_integrator</span><span class="o">::</span><span class="kt">Function</span><span class="p">,</span><span class="n">x0</span><span class="o">::</span><span class="kt">Vector</span><span class="p">,</span><span class="n">dt</span><span class="o">::</span><span class="kt">Real</span><span class="p">,</span><span class="n">tf</span><span class="o">::</span><span class="kt">Real</span><span class="p">;</span><span class="w"> </span><span class="n">tol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1e-13</span><span class="p">)</span>
+<div class="highlight hl-julia"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="n">simulate_implicit</span><span class="p">(</span>
+<span class="w">    </span><span class="n">params</span><span class="o">::</span><span class="kt">NamedTuple</span><span class="p">,</span>
+<span class="w">    </span><span class="n">dynamics</span><span class="o">::</span><span class="kt">Function</span><span class="p">,</span>
+<span class="w">    </span><span class="n">implicit_integrator</span><span class="o">::</span><span class="kt">Function</span><span class="p">,</span>
+<span class="w">    </span><span class="n">x0</span><span class="o">::</span><span class="kt">Vector</span><span class="p">,</span>
+<span class="w">    </span><span class="n">dt</span><span class="o">::</span><span class="kt">Real</span><span class="p">,</span>
+<span class="w">    </span><span class="n">tf</span><span class="o">::</span><span class="kt">Real</span><span class="p">;</span>
+<span class="w">    </span><span class="n">tol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1e-13</span><span class="p">,</span>
+<span class="p">)</span>
 <span class="w">    </span><span class="n">t_vec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="o">:</span><span class="n">dt</span><span class="o">:</span><span class="n">tf</span>
 <span class="w">    </span><span class="n">N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">length</span><span class="p">(</span><span class="n">t_vec</span><span class="p">)</span>
 <span class="w">    </span><span class="n">X</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="n">zeros</span><span class="p">(</span><span class="n">length</span><span class="p">(</span><span class="n">x0</span><span class="p">))</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="o">:</span><span class="n">N</span><span class="p">]</span>
 <span class="w">    </span><span class="n">X</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x0</span>
-<span class="w">    </span>
+
 <span class="w">    </span><span class="c"># TODO: do a forward simulation with the selected implicit integrator </span>
 <span class="w">    </span><span class="c"># hint: use your `implicit_integrator_solve` function</span>
 <span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="o">:</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span>
-<span class="w">        </span><span class="n">X</span><span class="p">[</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">implicit_integrator_solve</span><span class="p">(</span><span class="n">params</span><span class="p">,</span><span class="w"> </span><span class="n">dynamics</span><span class="p">,</span><span class="w"> </span><span class="n">implicit_integrator</span><span class="p">,</span><span class="w"> </span><span class="n">X</span><span class="p">[</span><span class="n">k</span><span class="p">],</span><span class="w"> </span><span class="n">dt</span><span class="p">)</span>
+<span class="w">        </span><span class="n">X</span><span class="p">[</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">implicit_integrator_solve</span><span class="p">(</span>
+<span class="w">            </span><span class="n">params</span><span class="p">,</span>
+<span class="w">            </span><span class="n">dynamics</span><span class="p">,</span>
+<span class="w">            </span><span class="n">implicit_integrator</span><span class="p">,</span>
+<span class="w">            </span><span class="n">X</span><span class="p">[</span><span class="n">k</span><span class="p">],</span>
+<span class="w">            </span><span class="n">dt</span><span class="p">,</span>
+<span class="w">        </span><span class="p">)</span>
 <span class="w">    </span><span class="k">end</span>
 
-<span class="w">    </span><span class="n">E</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="n">double_pendulum_energy</span><span class="p">(</span><span class="n">params</span><span class="p">,</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">X</span><span class="p">]</span>
-<span class="w">    </span><span class="nd">@assert</span><span class="w"> </span><span class="n">length</span><span class="p">(</span><span class="n">X</span><span class="p">)</span><span class="o">==</span><span class="n">N</span>
-<span class="w">    </span><span class="nd">@assert</span><span class="w"> </span><span class="n">length</span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="o">==</span><span class="n">N</span>
+<span class="w">    </span><span class="n">E</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="n">double_pendulum_energy</span><span class="p">(</span><span class="n">params</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">X</span><span class="p">]</span>
+<span class="w">    </span><span class="nd">@assert</span><span class="w"> </span><span class="n">length</span><span class="p">(</span><span class="n">X</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">N</span>
+<span class="w">    </span><span class="nd">@assert</span><span class="w"> </span><span class="n">length</span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">N</span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">X</span><span class="p">,</span><span class="w"> </span><span class="n">E</span>
 <span class="k">end</span>
 </pre></div>
@@ -8361,7 +8445,7 @@ implicit integrator check | <span class="ansi-green-fg">   3  </span><span class
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[20]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>simulate_implicit (generic function with 1 method)</pre>
 </div>
@@ -8373,7 +8457,7 @@ implicit integrator check | <span class="ansi-green-fg">   3  </span><span class
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [21]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-julia"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="n">max_err_E</span><span class="p">(</span><span class="n">E</span><span class="p">)</span>
@@ -8382,26 +8466,67 @@ implicit integrator check | <span class="ansi-green-fg">   3  </span><span class
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">maximum</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
 <span class="k">end</span>
 <span class="k">function</span><span class="w"> </span><span class="n">get_explicit_energy_error</span><span class="p">(</span><span class="n">integrator</span><span class="o">::</span><span class="kt">Function</span><span class="p">,</span><span class="w"> </span><span class="n">dts</span><span class="o">::</span><span class="kt">Vector</span><span class="p">)</span>
-<span class="w">    </span><span class="p">[</span><span class="n">max_err_E</span><span class="p">(</span><span class="n">simulate_explicit</span><span class="p">(</span><span class="n">params</span><span class="p">,</span><span class="n">double_pendulum_dynamics</span><span class="p">,</span><span class="n">integrator</span><span class="p">,</span><span class="n">x0</span><span class="p">,</span><span class="n">dt</span><span class="p">,</span><span class="n">tf</span><span class="p">)[</span><span class="mi">2</span><span class="p">])</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">dt</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">dts</span><span class="p">]</span>
+<span class="w">    </span><span class="p">[</span>
+<span class="w">        </span><span class="n">max_err_E</span><span class="p">(</span>
+<span class="w">            </span><span class="n">simulate_explicit</span><span class="p">(</span>
+<span class="w">                </span><span class="n">params</span><span class="p">,</span>
+<span class="w">                </span><span class="n">double_pendulum_dynamics</span><span class="p">,</span>
+<span class="w">                </span><span class="n">integrator</span><span class="p">,</span>
+<span class="w">                </span><span class="n">x0</span><span class="p">,</span>
+<span class="w">                </span><span class="n">dt</span><span class="p">,</span>
+<span class="w">                </span><span class="n">tf</span><span class="p">,</span>
+<span class="w">            </span><span class="p">)[</span><span class="mi">2</span><span class="p">],</span>
+<span class="w">        </span><span class="p">)</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">dt</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">dts</span>
+<span class="w">    </span><span class="p">]</span>
 <span class="k">end</span>
 <span class="k">function</span><span class="w"> </span><span class="n">get_implicit_energy_error</span><span class="p">(</span><span class="n">integrator</span><span class="o">::</span><span class="kt">Function</span><span class="p">,</span><span class="w"> </span><span class="n">dts</span><span class="o">::</span><span class="kt">Vector</span><span class="p">)</span>
-<span class="w">    </span><span class="p">[</span><span class="n">max_err_E</span><span class="p">(</span><span class="n">simulate_implicit</span><span class="p">(</span><span class="n">params</span><span class="p">,</span><span class="n">double_pendulum_dynamics</span><span class="p">,</span><span class="n">integrator</span><span class="p">,</span><span class="n">x0</span><span class="p">,</span><span class="n">dt</span><span class="p">,</span><span class="n">tf</span><span class="p">)[</span><span class="mi">2</span><span class="p">])</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">dt</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">dts</span><span class="p">]</span>
+<span class="w">    </span><span class="p">[</span>
+<span class="w">        </span><span class="n">max_err_E</span><span class="p">(</span>
+<span class="w">            </span><span class="n">simulate_implicit</span><span class="p">(</span>
+<span class="w">                </span><span class="n">params</span><span class="p">,</span>
+<span class="w">                </span><span class="n">double_pendulum_dynamics</span><span class="p">,</span>
+<span class="w">                </span><span class="n">integrator</span><span class="p">,</span>
+<span class="w">                </span><span class="n">x0</span><span class="p">,</span>
+<span class="w">                </span><span class="n">dt</span><span class="p">,</span>
+<span class="w">                </span><span class="n">tf</span><span class="p">,</span>
+<span class="w">            </span><span class="p">)[</span><span class="mi">2</span><span class="p">],</span>
+<span class="w">        </span><span class="p">)</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">dt</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">dts</span>
+<span class="w">    </span><span class="p">]</span>
 <span class="k">end</span>
 
 
 <span class="k">const</span><span class="w"> </span><span class="n">tf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2.0</span>
-<span class="k">let</span><span class="w"> </span>
+<span class="k">let</span>
 <span class="w">    </span><span class="c"># here we compare everything </span>
-<span class="w">    </span><span class="n">dts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1e-3</span><span class="p">,</span><span class="mf">1e-2</span><span class="p">,</span><span class="mf">1e-1</span><span class="p">]</span>
+<span class="w">    </span><span class="n">dts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1e-3</span><span class="p">,</span><span class="w"> </span><span class="mf">1e-2</span><span class="p">,</span><span class="w"> </span><span class="mf">1e-1</span><span class="p">]</span>
 <span class="w">    </span><span class="n">explicit_integrators</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="n">forward_euler</span><span class="p">,</span><span class="w"> </span><span class="n">midpoint</span><span class="p">,</span><span class="w"> </span><span class="n">rk4</span><span class="p">]</span>
 <span class="w">    </span><span class="n">implicit_integrators</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="n">backward_euler</span><span class="p">,</span><span class="w"> </span><span class="n">implicit_midpoint</span><span class="p">,</span><span class="w"> </span><span class="n">hermite_simpson</span><span class="p">]</span>
 
-<span class="w">    </span><span class="n">explicit_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="n">get_explicit_energy_error</span><span class="p">(</span><span class="n">integrator</span><span class="p">,</span><span class="w"> </span><span class="n">dts</span><span class="p">)</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">integrator</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">explicit_integrators</span><span class="p">]</span>
-<span class="w">    </span><span class="n">implicit_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="n">get_implicit_energy_error</span><span class="p">(</span><span class="n">integrator</span><span class="p">,</span><span class="w"> </span><span class="n">dts</span><span class="p">)</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">integrator</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">implicit_integrators</span><span class="p">]</span>
+<span class="w">    </span><span class="n">explicit_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="n">get_explicit_energy_error</span><span class="p">(</span><span class="n">integrator</span><span class="p">,</span><span class="w"> </span><span class="n">dts</span><span class="p">)</span><span class="w"> </span><span class="k">for</span>
+<span class="w">        </span><span class="n">integrator</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">explicit_integrators</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="w">    </span><span class="n">implicit_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="n">get_implicit_energy_error</span><span class="p">(</span><span class="n">integrator</span><span class="p">,</span><span class="w"> </span><span class="n">dts</span><span class="p">)</span><span class="w"> </span><span class="k">for</span>
+<span class="w">        </span><span class="n">integrator</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">implicit_integrators</span>
+<span class="w">    </span><span class="p">]</span>
 
-<span class="w">    </span><span class="n">plot</span><span class="p">(</span><span class="n">dts</span><span class="p">,</span><span class="w"> </span><span class="n">hcat</span><span class="p">(</span><span class="n">explicit_data</span><span class="o">...</span><span class="p">),</span><span class="n">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">"Forward Euler"</span><span class="w"> </span><span class="s">"Midpoint"</span><span class="w"> </span><span class="s">"RK4"</span><span class="p">],</span><span class="n">xaxis</span><span class="o">=</span><span class="ss">:log10</span><span class="p">,</span><span class="n">yaxis</span><span class="o">=</span><span class="ss">:log10</span><span class="p">,</span><span class="w"> </span><span class="n">xlabel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Δt (s)"</span><span class="p">,</span><span class="w"> </span><span class="n">ylabel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Energy Error"</span><span class="p">)</span>
-<span class="w">    </span><span class="n">plot!</span><span class="p">(</span><span class="n">dts</span><span class="p">,</span><span class="w"> </span><span class="n">hcat</span><span class="p">(</span><span class="n">implicit_data</span><span class="o">...</span><span class="p">),</span><span class="n">ls</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">:dash</span><span class="p">,</span><span class="w"> </span><span class="n">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">"Backward Euler"</span><span class="w"> </span><span class="s">"Implicit Midpoint"</span><span class="w"> </span><span class="s">"Hermite Simpson"</span><span class="p">])</span>
-<span class="w">    </span><span class="n">plot!</span><span class="p">(</span><span class="n">legend</span><span class="o">=</span><span class="ss">:bottomright</span><span class="p">)</span>
+<span class="w">    </span><span class="n">plot</span><span class="p">(</span>
+<span class="w">        </span><span class="n">dts</span><span class="p">,</span>
+<span class="w">        </span><span class="n">hcat</span><span class="p">(</span><span class="n">explicit_data</span><span class="o">...</span><span class="p">),</span>
+<span class="w">        </span><span class="n">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">"Forward Euler"</span><span class="w"> </span><span class="s">"Midpoint"</span><span class="w"> </span><span class="s">"RK4"</span><span class="p">],</span>
+<span class="w">        </span><span class="n">xaxis</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">:log10</span><span class="p">,</span>
+<span class="w">        </span><span class="n">yaxis</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">:log10</span><span class="p">,</span>
+<span class="w">        </span><span class="n">xlabel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Δt (s)"</span><span class="p">,</span>
+<span class="w">        </span><span class="n">ylabel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Energy Error"</span><span class="p">,</span>
+<span class="w">    </span><span class="p">)</span>
+<span class="w">    </span><span class="n">plot!</span><span class="p">(</span>
+<span class="w">        </span><span class="n">dts</span><span class="p">,</span>
+<span class="w">        </span><span class="n">hcat</span><span class="p">(</span><span class="n">implicit_data</span><span class="o">...</span><span class="p">),</span>
+<span class="w">        </span><span class="n">ls</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">:dash</span><span class="p">,</span>
+<span class="w">        </span><span class="n">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">"Backward Euler"</span><span class="w"> </span><span class="s">"Implicit Midpoint"</span><span class="w"> </span><span class="s">"Hermite Simpson"</span><span class="p">],</span>
+<span class="w">    </span><span class="p">)</span>
+<span class="w">    </span><span class="n">plot!</span><span class="p">(</span><span class="n">legend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">:bottomright</span><span class="p">)</span>
 <span class="k">end</span>
 </pre></div>
 </div>
@@ -8413,7 +8538,7 @@ implicit integrator check | <span class="ansi-green-fg">   3  </span><span class
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[21]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <?xml version="1.0" encoding="utf-8"?>
 <svg height="400" viewbox="0 0 2400 1600" width="600" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -8483,34 +8608,77 @@ implicit integrator check | <span class="ansi-green-fg">   3  </span><span class
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [22]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-julia"><pre><span></span><span class="nd">@testset</span><span class="w"> </span><span class="s">"energy behavior"</span><span class="w"> </span><span class="k">begin</span><span class="w"> </span>
-<span class="w">    </span>
+<div class="highlight hl-julia"><pre><span></span><span class="nd">@testset</span><span class="w"> </span><span class="s">"energy behavior"</span><span class="w"> </span><span class="k">begin</span>
+
 <span class="w">    </span><span class="c"># simulate with all integrators</span>
 <span class="w">    </span><span class="n">dt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.01</span>
 <span class="w">    </span><span class="n">t_vec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="o">:</span><span class="n">dt</span><span class="o">:</span><span class="n">tf</span>
-<span class="w">    </span><span class="n">E1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">simulate_explicit</span><span class="p">(</span><span class="n">params</span><span class="p">,</span><span class="n">double_pendulum_dynamics</span><span class="p">,</span><span class="n">forward_euler</span><span class="p">,</span><span class="n">x0</span><span class="p">,</span><span class="n">dt</span><span class="p">,</span><span class="n">tf</span><span class="p">)[</span><span class="mi">2</span><span class="p">]</span>
-<span class="w">    </span><span class="n">E2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">simulate_implicit</span><span class="p">(</span><span class="n">params</span><span class="p">,</span><span class="n">double_pendulum_dynamics</span><span class="p">,</span><span class="n">backward_euler</span><span class="p">,</span><span class="n">x0</span><span class="p">,</span><span class="n">dt</span><span class="p">,</span><span class="n">tf</span><span class="p">)[</span><span class="mi">2</span><span class="p">]</span>
-<span class="w">    </span><span class="n">E3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">simulate_implicit</span><span class="p">(</span><span class="n">params</span><span class="p">,</span><span class="n">double_pendulum_dynamics</span><span class="p">,</span><span class="n">implicit_midpoint</span><span class="p">,</span><span class="n">x0</span><span class="p">,</span><span class="n">dt</span><span class="p">,</span><span class="n">tf</span><span class="p">)[</span><span class="mi">2</span><span class="p">]</span>
-<span class="w">    </span><span class="n">E4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">simulate_implicit</span><span class="p">(</span><span class="n">params</span><span class="p">,</span><span class="n">double_pendulum_dynamics</span><span class="p">,</span><span class="n">hermite_simpson</span><span class="p">,</span><span class="n">x0</span><span class="p">,</span><span class="n">dt</span><span class="p">,</span><span class="n">tf</span><span class="p">)[</span><span class="mi">2</span><span class="p">]</span>
-<span class="w">    </span><span class="n">E5</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">simulate_explicit</span><span class="p">(</span><span class="n">params</span><span class="p">,</span><span class="n">double_pendulum_dynamics</span><span class="p">,</span><span class="n">midpoint</span><span class="p">,</span><span class="n">x0</span><span class="p">,</span><span class="n">dt</span><span class="p">,</span><span class="n">tf</span><span class="p">)[</span><span class="mi">2</span><span class="p">]</span>
-<span class="w">    </span><span class="n">E6</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">simulate_explicit</span><span class="p">(</span><span class="n">params</span><span class="p">,</span><span class="n">double_pendulum_dynamics</span><span class="p">,</span><span class="n">rk4</span><span class="p">,</span><span class="n">x0</span><span class="p">,</span><span class="n">dt</span><span class="p">,</span><span class="n">tf</span><span class="p">)[</span><span class="mi">2</span><span class="p">]</span>
-<span class="w">    </span>
+<span class="w">    </span><span class="n">E1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">simulate_explicit</span><span class="p">(</span>
+<span class="w">        </span><span class="n">params</span><span class="p">,</span>
+<span class="w">        </span><span class="n">double_pendulum_dynamics</span><span class="p">,</span>
+<span class="w">        </span><span class="n">forward_euler</span><span class="p">,</span>
+<span class="w">        </span><span class="n">x0</span><span class="p">,</span>
+<span class="w">        </span><span class="n">dt</span><span class="p">,</span>
+<span class="w">        </span><span class="n">tf</span><span class="p">,</span>
+<span class="w">    </span><span class="p">)[</span><span class="mi">2</span><span class="p">]</span>
+<span class="w">    </span><span class="n">E2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">simulate_implicit</span><span class="p">(</span>
+<span class="w">        </span><span class="n">params</span><span class="p">,</span>
+<span class="w">        </span><span class="n">double_pendulum_dynamics</span><span class="p">,</span>
+<span class="w">        </span><span class="n">backward_euler</span><span class="p">,</span>
+<span class="w">        </span><span class="n">x0</span><span class="p">,</span>
+<span class="w">        </span><span class="n">dt</span><span class="p">,</span>
+<span class="w">        </span><span class="n">tf</span><span class="p">,</span>
+<span class="w">    </span><span class="p">)[</span><span class="mi">2</span><span class="p">]</span>
+<span class="w">    </span><span class="n">E3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">simulate_implicit</span><span class="p">(</span>
+<span class="w">        </span><span class="n">params</span><span class="p">,</span>
+<span class="w">        </span><span class="n">double_pendulum_dynamics</span><span class="p">,</span>
+<span class="w">        </span><span class="n">implicit_midpoint</span><span class="p">,</span>
+<span class="w">        </span><span class="n">x0</span><span class="p">,</span>
+<span class="w">        </span><span class="n">dt</span><span class="p">,</span>
+<span class="w">        </span><span class="n">tf</span><span class="p">,</span>
+<span class="w">    </span><span class="p">)[</span><span class="mi">2</span><span class="p">]</span>
+<span class="w">    </span><span class="n">E4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">simulate_implicit</span><span class="p">(</span>
+<span class="w">        </span><span class="n">params</span><span class="p">,</span>
+<span class="w">        </span><span class="n">double_pendulum_dynamics</span><span class="p">,</span>
+<span class="w">        </span><span class="n">hermite_simpson</span><span class="p">,</span>
+<span class="w">        </span><span class="n">x0</span><span class="p">,</span>
+<span class="w">        </span><span class="n">dt</span><span class="p">,</span>
+<span class="w">        </span><span class="n">tf</span><span class="p">,</span>
+<span class="w">    </span><span class="p">)[</span><span class="mi">2</span><span class="p">]</span>
+<span class="w">    </span><span class="n">E5</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">simulate_explicit</span><span class="p">(</span>
+<span class="w">        </span><span class="n">params</span><span class="p">,</span>
+<span class="w">        </span><span class="n">double_pendulum_dynamics</span><span class="p">,</span>
+<span class="w">        </span><span class="n">midpoint</span><span class="p">,</span>
+<span class="w">        </span><span class="n">x0</span><span class="p">,</span>
+<span class="w">        </span><span class="n">dt</span><span class="p">,</span>
+<span class="w">        </span><span class="n">tf</span><span class="p">,</span>
+<span class="w">    </span><span class="p">)[</span><span class="mi">2</span><span class="p">]</span>
+<span class="w">    </span><span class="n">E6</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">simulate_explicit</span><span class="p">(</span><span class="n">params</span><span class="p">,</span><span class="w"> </span><span class="n">double_pendulum_dynamics</span><span class="p">,</span><span class="w"> </span><span class="n">rk4</span><span class="p">,</span><span class="w"> </span><span class="n">x0</span><span class="p">,</span><span class="w"> </span><span class="n">dt</span><span class="p">,</span><span class="w"> </span><span class="n">tf</span><span class="p">)[</span><span class="mi">2</span><span class="p">]</span>
+
 <span class="w">    </span><span class="c"># plot forward/backward euler and implicit midpoint </span>
-<span class="w">    </span><span class="n">plot</span><span class="p">(</span><span class="n">t_vec</span><span class="p">,</span><span class="n">E1</span><span class="p">,</span><span class="w"> </span><span class="n">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Forward Euler (explicit)"</span><span class="p">)</span>
-<span class="w">    </span><span class="n">plot!</span><span class="p">(</span><span class="n">t_vec</span><span class="p">,</span><span class="n">E2</span><span class="p">,</span><span class="w"> </span><span class="n">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Backward Euler (implicit)"</span><span class="p">)</span>
-<span class="w">    </span><span class="n">display</span><span class="p">(</span><span class="n">plot!</span><span class="p">(</span><span class="n">t_vec</span><span class="p">,</span><span class="n">E3</span><span class="p">,</span><span class="w"> </span><span class="n">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Implicit Midpoint"</span><span class="p">,</span><span class="n">xlabel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Time (s)"</span><span class="p">,</span><span class="w"> </span><span class="n">ylabel</span><span class="o">=</span><span class="s">"Energy (J)"</span><span class="p">))</span>
+<span class="w">    </span><span class="n">plot</span><span class="p">(</span><span class="n">t_vec</span><span class="p">,</span><span class="w"> </span><span class="n">E1</span><span class="p">,</span><span class="w"> </span><span class="n">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Forward Euler (explicit)"</span><span class="p">)</span>
+<span class="w">    </span><span class="n">plot!</span><span class="p">(</span><span class="n">t_vec</span><span class="p">,</span><span class="w"> </span><span class="n">E2</span><span class="p">,</span><span class="w"> </span><span class="n">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Backward Euler (implicit)"</span><span class="p">)</span>
+<span class="w">    </span><span class="n">display</span><span class="p">(</span>
+<span class="w">        </span><span class="n">plot!</span><span class="p">(</span>
+<span class="w">            </span><span class="n">t_vec</span><span class="p">,</span>
+<span class="w">            </span><span class="n">E3</span><span class="p">,</span>
+<span class="w">            </span><span class="n">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Implicit Midpoint"</span><span class="p">,</span>
+<span class="w">            </span><span class="n">xlabel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Time (s)"</span><span class="p">,</span>
+<span class="w">            </span><span class="n">ylabel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Energy (J)"</span><span class="p">,</span>
+<span class="w">        </span><span class="p">),</span>
+<span class="w">    </span><span class="p">)</span>
 
 <span class="w">    </span><span class="c"># test energy behavior</span>
 <span class="w">    </span><span class="n">E0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">E1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-<span class="w">    </span>
-<span class="w">    </span><span class="nd">@test</span><span class="w"> </span><span class="mf">2.5</span><span class="w">  </span><span class="o">&lt;</span><span class="w"> </span><span class="p">(</span><span class="n">E1</span><span class="p">[</span><span class="k">end</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">E0</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">3.0</span>
-<span class="w">    </span><span class="nd">@test</span><span class="w"> </span><span class="o">-</span><span class="mf">3.0</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="p">(</span><span class="n">E2</span><span class="p">[</span><span class="k">end</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">E0</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="o">-</span><span class="mf">2.5</span><span class="w">  </span>
+
+<span class="w">    </span><span class="nd">@test</span><span class="w"> </span><span class="mf">2.5</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="p">(</span><span class="n">E1</span><span class="p">[</span><span class="k">end</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">E0</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">3.0</span>
+<span class="w">    </span><span class="nd">@test</span><span class="w"> </span><span class="o">-</span><span class="mf">3.0</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="p">(</span><span class="n">E2</span><span class="p">[</span><span class="k">end</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">E0</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="o">-</span><span class="mf">2.5</span>
 <span class="w">    </span><span class="nd">@test</span><span class="w"> </span><span class="n">abs</span><span class="p">(</span><span class="n">E3</span><span class="p">[</span><span class="k">end</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">E0</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">1e-2</span>
 <span class="w">    </span><span class="nd">@test</span><span class="w"> </span><span class="n">abs</span><span class="p">(</span><span class="n">E0</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">E4</span><span class="p">[</span><span class="k">end</span><span class="p">])</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">1e-4</span>
-<span class="w">    </span><span class="nd">@test</span><span class="w"> </span><span class="n">abs</span><span class="p">(</span><span class="n">E0</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">E5</span><span class="p">[</span><span class="k">end</span><span class="p">])</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">1e-1</span><span class="w"> </span>
+<span class="w">    </span><span class="nd">@test</span><span class="w"> </span><span class="n">abs</span><span class="p">(</span><span class="n">E0</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">E5</span><span class="p">[</span><span class="k">end</span><span class="p">])</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">1e-1</span>
 <span class="w">    </span><span class="nd">@test</span><span class="w"> </span><span class="n">abs</span><span class="p">(</span><span class="n">E0</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">E6</span><span class="p">[</span><span class="k">end</span><span class="p">])</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">1e-4</span>
 <span class="k">end</span>
 </pre></div>
@@ -8588,7 +8756,7 @@ energy behavior | <span class="ansi-green-fg">   6  </span><span class="ansi-cya
 </div>
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[22]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>Test.DefaultTestSet("energy behavior", Any[], 6, false, false, true, 1.706280537683998e9, 1.706280537763158e9, false)</pre>
 </div>

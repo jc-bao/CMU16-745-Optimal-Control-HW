@@ -42,4 +42,38 @@ We recommend this method of converting your Jupyter notebook to a PDF because it
 
 ### Others
 
-If HTML to PDF does not work, feel free to try other methods: [https://mljar.com/blog/jupyter-notebook-pdf/](https://mljar.com/blog/jupyter-notebook-pdf/). 
+If HTML to PDF does not work, feel free to try other methods: [https://mljar.com/blog/jupyter-notebook-pdf/](https://mljar.com/blog/jupyter-notebook-pdf/). @testset "part D" begin
+    # define qp parameters
+​    qp = (
+​        Q = [
+​            1.0 0.3 0.0 0.0
+​            0.3 1.0 0.0 0.0
+​            0.0 0.0 1.0 0.0
+​            0.0 0.0 0.0 2.0
+​        ],
+​        q = [-2.0, 3.4, 2.0, 4.0],
+​        A = [0.0 0.0 1.0 1.0; -1.0 2.3 1.0 -2.0],
+​        b = [1.0, 3.0],
+​        G = [
+​            1.0 0.0 0.0 0.0
+​            0.0 1.0 0.0 0.0
+​            -1.0 0.0 0.0 0.0
+​            0.0 -1.0 0.0 0.0
+​            0.0 0.0 1.0 0.0
+​            0.0 0.0 -1.0 0.0
+​            0.0 0.0 0.0 1.0
+​            0.0 0.0 0.0 -1.0
+​        ],
+​        h = [1.0, 1.0, 0.5, 0.5, 1.0, 1.0, 1.0, 1.0],
+​    )
+
+    x, λ, μ = solve_qp(qp; verbose = false, max_iters = 100, tol = 1e-6)
+    
+    y = x[1:2]
+    a = x[3]
+    b = x[4]
+    
+    @test norm(y - [-0.080823; 0.834424]) < 1e-3
+    @test abs(a - 1) < 1e-3
+    @test abs(b) < 1e-3
+end
