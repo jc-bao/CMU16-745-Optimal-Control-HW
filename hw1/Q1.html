@@ -2113,7 +2113,7 @@ body.lm-mod-override-cursor .jp-IFrame::before {
 
 .jp-arrayFieldWrapper .field-description {
   padding: 4px 0;
-  white-space: pre-wrap;
+  white-space: pre;
 }
 
 .jp-arrayFieldWrapper .array-item {
@@ -3486,7 +3486,7 @@ button.jp-Dialog-close-button {
   border-radius: var(--jp-border-radius);
   color: var(--jp-ui-font-color1);
   font-size: var(--jp-ui-font-size1);
-  white-space: pre-wrap;
+  white-space: pre;
   word-wrap: break-word;
 }
 
@@ -4166,7 +4166,7 @@ button.jp-Dialog-close-button {
   font-size: inherit;
   line-height: var(--jp-code-line-height);
   padding: 0;
-  white-space: pre-wrap;
+  white-space: pre;
 }
 
 .jp-RenderedHTMLCommon :not(pre) > code {
@@ -5416,7 +5416,7 @@ body.lm-mod-override-cursor .jp-OutputArea-output.jp-mod-isolated::before {
   overflow-y: auto;
   word-break: break-all;
   word-wrap: break-word;
-  white-space: pre-wrap;
+  white-space: pre;
 }
 
 /* tables */
@@ -7443,7 +7443,7 @@ a.anchor-link {
     border-radius: var(--jp-border-radius);
     color: var(--jp-ui-font-color1);
     font-size: var(--jp-ui-font-size1);
-    white-space: pre-wrap;
+    white-space: pre;
     word-wrap: break-word;
   }
 
@@ -7481,7 +7481,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-julia"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="n">Pkg</span>
@@ -7530,7 +7530,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-julia"><pre><span></span><span class="k">let</span><span class="w">  </span>
@@ -7563,7 +7563,7 @@ x = [300, 2, 100]
 </div>
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[2]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>3-element Vector{Int64}:
  300
@@ -7578,7 +7578,7 @@ x = [300, 2, 100]
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-julia"><pre><span></span><span class="c"># to avoid this, here are two alternatives </span>
@@ -7617,7 +7617,7 @@ y2 = [1, 2, 100]
 </div>
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[3]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>3-element Vector{Int64}:
    1
@@ -7643,7 +7643,7 @@ y2 = [1, 2, 100]
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-julia"><pre><span></span><span class="c">## optional arguments in functions </span>
@@ -7677,7 +7677,7 @@ y2 = [1, 2, 100]
 </div>
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[4]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>(1, 2, 4, -30)</pre>
 </div>
@@ -7719,7 +7719,7 @@ y2 = [1, 2, 100]
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-julia"><pre><span></span><span class="c"># these two functions are given, no TODO's here </span>
@@ -7778,7 +7778,7 @@ y2 = [1, 2, 100]
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[5]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>double_pendulum_energy (generic function with 1 method)</pre>
 </div>
@@ -7802,7 +7802,7 @@ y2 = [1, 2, 100]
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-julia"><pre><span></span><span class="s">"""</span>
@@ -7826,7 +7826,7 @@ y2 = [1, 2, 100]
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[6]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>forward_euler</pre>
 </div>
@@ -7838,7 +7838,7 @@ y2 = [1, 2, 100]
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-julia"><pre><span></span><span class="n">include</span><span class="p">(</span><span class="n">joinpath</span><span class="p">(</span><span class="nd">@__DIR__</span><span class="p">,</span><span class="w"> </span><span class="s">"animation.jl"</span><span class="p">))</span>
@@ -8015,7 +8015,7 @@ y2 = [1, 2, 100]
 </div>
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[8]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div style="height: 500px; width: 100%; overflow-x: auto; overflow-y: hidden; resize: both">
 <iframe src="http://127.0.0.1:8700" style="width: 100%; height: 100%; border: none"></iframe>
@@ -8049,7 +8049,7 @@ x_{k+1} &amp;= x_k + (1/6)\cdot (k_1 + 2k_2 + 2k_3 + k_4)\end{align} $$</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-julia"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="n">midpoint</span><span class="p">(</span><span class="n">params</span><span class="o">::</span><span class="kt">NamedTuple</span><span class="p">,</span><span class="w"> </span><span class="n">dynamics</span><span class="o">::</span><span class="kt">Function</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="o">::</span><span class="kt">Vector</span><span class="p">,</span><span class="w"> </span><span class="n">dt</span><span class="o">::</span><span class="kt">Real</span><span class="p">)</span><span class="o">::</span><span class="kt">Vector</span>
@@ -8075,7 +8075,7 @@ x_{k+1} &amp;= x_k + (1/6)\cdot (k_1 + 2k_2 + 2k_3 + k_4)\end{align} $$</p>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[9]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>rk4 (generic function with 1 method)</pre>
 </div>
@@ -8087,7 +8087,7 @@ x_{k+1} &amp;= x_k + (1/6)\cdot (k_1 + 2k_2 + 2k_3 + k_4)\end{align} $$</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-julia"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="n">simulate_explicit</span><span class="p">(</span><span class="n">params</span><span class="o">::</span><span class="kt">NamedTuple</span><span class="p">,</span><span class="n">dynamics</span><span class="o">::</span><span class="kt">Function</span><span class="p">,</span><span class="n">integrator</span><span class="o">::</span><span class="kt">Function</span><span class="p">,</span><span class="n">x0</span><span class="o">::</span><span class="kt">Vector</span><span class="p">,</span><span class="n">dt</span><span class="o">::</span><span class="kt">Real</span><span class="p">,</span><span class="n">tf</span><span class="o">::</span><span class="kt">Real</span><span class="p">)</span>
@@ -8120,7 +8120,7 @@ x_{k+1} &amp;= x_k + (1/6)\cdot (k_1 + 2k_2 + 2k_3 + k_4)\end{align} $$</p>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[10]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>simulate_explicit (generic function with 1 method)</pre>
 </div>
@@ -8132,7 +8132,7 @@ x_{k+1} &amp;= x_k + (1/6)\cdot (k_1 + 2k_2 + 2k_3 + k_4)\end{align} $$</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-julia"><pre><span></span><span class="c"># initial condition</span>
@@ -8155,7 +8155,7 @@ x_{k+1} &amp;= x_k + (1/6)\cdot (k_1 + 2k_2 + 2k_3 + k_4)\end{align} $$</p>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[11]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>(m1 = 1.0, m2 = 1.0, L1 = 1.0, L2 = 1.0, g = 9.8)</pre>
 </div>
@@ -8197,7 +8197,7 @@ $$ \begin{align} x_{k+1/2} &amp;= \frac{1}{2}(x_k + x_{k+1}) + \frac{\Delta t}{8
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-julia"><pre><span></span><span class="c"># since these are explicit integrators, these function will return the residuals described above</span>
@@ -8222,7 +8222,7 @@ $$ \begin{align} x_{k+1/2} &amp;= \frac{1}{2}(x_k + x_{k+1}) + \frac{\Delta t}{8
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[14]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>hermite_simpson (generic function with 1 method)</pre>
 </div>
@@ -8234,7 +8234,7 @@ $$ \begin{align} x_{k+1/2} &amp;= \frac{1}{2}(x_k + x_{k+1}) + \frac{\Delta t}{8
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-julia"><pre><span></span><span class="c"># TODO</span>
@@ -8271,7 +8271,7 @@ $$ \begin{align} x_{k+1/2} &amp;= \frac{1}{2}(x_k + x_{k+1}) + \frac{\Delta t}{8
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[18]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>implicit_integrator_solve (generic function with 1 method)</pre>
 </div>
@@ -8283,7 +8283,7 @@ $$ \begin{align} x_{k+1/2} &amp;= \frac{1}{2}(x_k + x_{k+1}) + \frac{\Delta t}{8
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [19]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-julia"><pre><span></span><span class="nd">@testset</span><span class="w"> </span><span class="s">"implicit integrator check"</span><span class="w"> </span><span class="k">begin</span><span class="w"> </span>
@@ -8319,7 +8319,7 @@ implicit integrator check | <span class="ansi-green-fg">   3  </span><span class
 </div>
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[19]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>Test.DefaultTestSet("implicit integrator check", Any[], 3, false, false, true, 1.706280499859626e9, 1.706280501501644e9, false)</pre>
 </div>
@@ -8331,7 +8331,7 @@ implicit integrator check | <span class="ansi-green-fg">   3  </span><span class
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [20]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-julia"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="n">simulate_implicit</span><span class="p">(</span><span class="n">params</span><span class="o">::</span><span class="kt">NamedTuple</span><span class="p">,</span><span class="n">dynamics</span><span class="o">::</span><span class="kt">Function</span><span class="p">,</span><span class="n">implicit_integrator</span><span class="o">::</span><span class="kt">Function</span><span class="p">,</span><span class="n">x0</span><span class="o">::</span><span class="kt">Vector</span><span class="p">,</span><span class="n">dt</span><span class="o">::</span><span class="kt">Real</span><span class="p">,</span><span class="n">tf</span><span class="o">::</span><span class="kt">Real</span><span class="p">;</span><span class="w"> </span><span class="n">tol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1e-13</span><span class="p">)</span>
@@ -8361,7 +8361,7 @@ implicit integrator check | <span class="ansi-green-fg">   3  </span><span class
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[20]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>simulate_implicit (generic function with 1 method)</pre>
 </div>
@@ -8373,7 +8373,7 @@ implicit integrator check | <span class="ansi-green-fg">   3  </span><span class
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [21]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-julia"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="n">max_err_E</span><span class="p">(</span><span class="n">E</span><span class="p">)</span>
@@ -8413,7 +8413,7 @@ implicit integrator check | <span class="ansi-green-fg">   3  </span><span class
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[21]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <?xml version="1.0" encoding="utf-8"?>
 <svg height="400" viewbox="0 0 2400 1600" width="600" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -8483,7 +8483,7 @@ implicit integrator check | <span class="ansi-green-fg">   3  </span><span class
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [22]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-julia"><pre><span></span><span class="nd">@testset</span><span class="w"> </span><span class="s">"energy behavior"</span><span class="w"> </span><span class="k">begin</span><span class="w"> </span>
@@ -8588,7 +8588,7 @@ energy behavior | <span class="ansi-green-fg">   6  </span><span class="ansi-cya
 </div>
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[22]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>Test.DefaultTestSet("energy behavior", Any[], 6, false, false, true, 1.706280537683998e9, 1.706280537763158e9, false)</pre>
 </div>

@@ -8889,13 +8889,15 @@ quadruped standing | <span class="ansi-green-fg">   3  </span><span class="ansi-
 <li>Why do we use a linesearch?</li>
 </ol>
 <p><strong>put ONE SENTENCE answer here</strong></p>
-<p>A: To aviod overshooting the minimum and boost the convergence rate.</p>
+<p>A: To aviod overshooting the minimum and boost the convergence rate by shrinking to a appropriate step size.</p>
 <ol start="2">
 <li>Do we need a linesearch for both convex and nonconvex problems?</li>
 </ol>
 <p><strong>put ONE SENTENCE answer here</strong></p>
-<p>A: No, we don't need a linesearch for convex problems.</p>
-<ol start="3">
+<p>A:</p>
+<p>For convex problem: we don't need a linesearch because Newton's method is guaranteed to converge to the minimum.</p>
+<p>For nonconvex problem: we need a linesearch to avoid overshooting.</p>
+<ol>
 <li>Name one case where we absolutely do not need a linesearch.</li>
 </ol>
 <p><strong>put ONE SENTENCE answer here</strong></p>
