@@ -41,7 +41,7 @@ end
 function vis_traj!(vis, name, X; R = 0.01, color = mc.RGBA(1.0, 0.0, 0.0, 1.0))
     for i = 1:(length(X)-1)
         a = X[i][1:3]
-        b = X[i+1][1:3]
+        b = X[i+1][1:3] + (ones(3) * 1e-10) # add small perturbation to avoid a == b
         cyl = mc.Cylinder(mc.Point(a...), mc.Point(b...), R)
         mc.setobject!(vis[name]["p"*string(i)], cyl, mc.MeshPhongMaterial(color=color))
     end
