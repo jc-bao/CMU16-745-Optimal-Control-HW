@@ -1,5 +1,5 @@
 import MathOptInterface as MOI
-import Ipopt 
+import Ipopt
 import FiniteDiff
 import ForwardDiff
 using LinearAlgebra
@@ -79,7 +79,7 @@ end
 
 function MOI.eval_objective_gradient(prob::MOI.AbstractNLPEvaluator, grad_f, x)
     _cost(_x) = prob.cost(prob.params, _x)
-    if prob.diff_type == :auto 
+    if prob.diff_type == :auto
         ForwardDiff.gradient!(grad_f,_cost,x)
     else
         FiniteDiff.finite_difference_gradient!(grad_f, _cost, x)
@@ -94,7 +94,7 @@ end
 
 function MOI.eval_constraint_jacobian(prob::MOI.AbstractNLPEvaluator, jac, x)
     _con(_x) = prob.con(prob.params, _x)
-    if prob.diff_type == :auto 
+    if prob.diff_type == :auto
         reshape(jac,prob.m_nlp,prob.n_nlp) .= ForwardDiff.jacobian(_con, x)
     else
         reshape(jac,prob.m_nlp,prob.n_nlp) .= FiniteDiff.finite_difference_jacobian(_con, x)
@@ -113,41 +113,41 @@ MOI.jacobian_structure(prob::MOI.AbstractNLPEvaluator) = prob.sparsity_jac
 """
 x = fmincon(cost,equality_constraint,inequality_constraint,x_l,x_u,c_l,c_u,x0,params,diff_type)
 
-This function uses IPOPT to minimize an objective function 
+This function uses IPOPT to minimize an objective function
 
-`cost(params, x)` 
+`cost(params, x)`
 
-With the following three constraints: 
+With the following three constraints:
 
 `equality_constraint(params, x) = 0`
-`c_l <= inequality_constraint(params, x) <= c_u` 
-`x_l <= x <= x_u` 
+`c_l <= inequality_constraint(params, x) <= c_u`
+`x_l <= x <= x_u`
 
-Problem specific parameters should be loaded into params::NamedTuple (things like 
-cost weights, dynamics parameters, etc.). 
+Problem specific parameters should be loaded into params::NamedTuple (things like
+cost weights, dynamics parameters, etc.).
 
 args:
     cost::Function                    - objective function to be minimzed (returns scalar)
-    equality_constraint::Function     - c_eq(params, x) == 0 
-    inequality_constraint::Function   - c_l <= c_ineq(params, x) c_u 
-    x_l::Vector                       - x_l <= x <= x_u 
-    x_u::Vector                       - x_l <= x <= x_u 
-    c_l::Vector                       - c_l <= c_ineq(params, x) <= x_u 
-    c_u::Vector                       - c_l <= c_ineq(params, x) <= x_u 
-    x0::Vector                        - initial guess 
-    params::NamedTuple                - problem parameters for use in costs/constraints 
-    diff_type::Symbol                 - :auto for ForwardDiff, :finite for FiniteDiff 
+    equality_constraint::Function     - c_eq(params, x) == 0
+    inequality_constraint::Function   - c_l <= c_ineq(params, x) c_u
+    x_l::Vector                       - x_l <= x <= x_u
+    x_u::Vector                       - x_l <= x <= x_u
+    c_l::Vector                       - c_l <= c_ineq(params, x) <= x_u
+    c_u::Vector                       - c_l <= c_ineq(params, x) <= x_u
+    x0::Vector                        - initial guess
+    params::NamedTuple                - problem parameters for use in costs/constraints
+    diff_type::Symbol                 - :auto for ForwardDiff, :finite for FiniteDiff
 
 optional args:
-    tol                               - optimality tolerance 
-    c_tol                             - constraint violation tolerance 
-    max_iters                         - max iterations 
-    verbose                           - true for IPOPT output, false for nothing 
+    tol                               - optimality tolerance
+    c_tol                             - constraint violation tolerance
+    max_iters                         - max iterations
+    verbose                           - true for IPOPT output, false for nothing
 
-You should try and use :auto for your `diff_type` first, and only use :finite if you 
-absolutely cannot get ForwardDiff to work. 
+You should try and use :auto for your `diff_type` first, and only use :finite if you
+absolutely cannot get ForwardDiff to work.
 
-This function will run a few basic checks before sending the problem off to IPOPT to 
+This function will run a few basic checks before sending the problem off to IPOPT to
 solve. The outputs of these checks will be reported as the following:
 
 ---------checking dimensions of everything----------
@@ -158,8 +158,8 @@ solve. The outputs of these checks will be reported as the following:
 ---------successfully compiled both derivatives-----
 ---------IPOPT beginning solve----------------------
 
-If you're getting stuck during the testing of one of the derivatives, try switching 
-to FiniteDiff.jl by setting diff_type = :finite. 
+If you're getting stuck during the testing of one of the derivatives, try switching
+to FiniteDiff.jl by setting diff_type = :finite.
 """
 
 function fmincon(cost::Function,
@@ -176,47 +176,47 @@ function fmincon(cost::Function,
                  c_tol = 1e-4,
                  max_iters = 1_000,
                  verbose = true)::Vector
-    
+
     n_primals = length(x0)
     n_eq = length(equality_constraint(params, x0))
     n_ineq = length(inequality_constraint(params, x0))
-    
+
     verbose && println("---------checking dimensions of everything----------")
     @assert length(x0) == length(x_l) == length(x_u)
     @assert length(c_l) == length(c_u) == n_ineq
     @assert all(x_u .>= x_l)
-    if n_ineq > 0 
+    if n_ineq > 0
         @assert all(c_u .>= c_l)
     end
     verbose && println("---------all dimensions good------------------------")
-    
-    
+
+
     function con(params, x)
         [
             equality_constraint(params, x);
             inequality_constraint(params, x)
         ]
     end
-    
-    if diff_type == :auto 
+
+    if diff_type == :auto
         verbose && println("---------diff type set to :auto (ForwardDiff.jl)----")
     else
         verbose && println("---------diff type set to :finite (FiniteDiff.jl)---")
     end
     verbose && println("---------testing objective gradient-----------------")
-    if diff_type == :auto 
+    if diff_type == :auto
         ForwardDiff.gradient(_x -> cost(params, _x), x0)
     else
         FiniteDiff.finite_difference_gradient(_x -> cost(params, _x), x0)
-    end     
+    end
     verbose && println("---------testing constraint Jacobian----------------")
-    if diff_type == :auto 
+    if diff_type == :auto
         ForwardDiff.jacobian(_x -> con(params, _x), x0)
     else
         FiniteDiff.finite_difference_jacobian(_x -> con(params, _x), x0)
-    end    
+    end
     verbose && println("---------successfully compiled both derivatives-----")
-    
+
     prob = ProblemMOI(n_primals, n_eq + n_ineq, params, cost, con, diff_type)
 
     # add zeros(n_eq) for equality constraint
@@ -227,11 +227,11 @@ function fmincon(cost::Function,
     solver.options["max_iter"] = max_iters
     solver.options["tol"] = tol
     solver.options["constr_viol_tol"] = c_tol
-    
-    if verbose 
+
+    if verbose
         solver.options["print_level"] = 5
     else
-        solver.options["print_level"] = 0 
+        solver.options["print_level"] = 0
     end
 
     x = MOI.add_variables(solver,prob.n_nlp)
@@ -251,8 +251,7 @@ function fmincon(cost::Function,
 
     # Get the solution
     res = MOI.get(solver, MOI.VariablePrimal(), x)
-    
-    return res 
-    
-end
 
+    return res
+
+end

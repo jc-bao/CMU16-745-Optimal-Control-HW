@@ -22,7 +22,7 @@ function quadrotor_dynamics(model::NamedTuple,x,u)
     p = x[7:9]     # n_p_b (MRP) attitude 
     ω = x[10:12]   # angular velocity 
 
-    Q = dcm_from_mrp(p)
+    Q = dcm_from_mrp(p) # DCM from MRP to body frame
 
     mass=model.mass
     J = model.J
@@ -54,7 +54,7 @@ function quadrotor_dynamics(model::NamedTuple,x,u)
     [
         v
         f/mass
-        ((1+norm(p)^2)/4) *(   I + 2*(skew(p)^2 + skew(p))/(1+norm(p)^2)   )*ω
+        ((1+norm(p)^2)/4) *(   I + 2*(skew(p)^2 + skew(p))/(1+norm(p)^2)   )*ω # integrate MRP
         J\(τ - cross(ω,J*ω))
     ]
 end
